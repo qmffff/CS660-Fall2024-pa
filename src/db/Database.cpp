@@ -43,5 +43,6 @@ DbFile &Database::get(const std::string &name) const {
     throw std::logic_error("File does not exist in the catalog.");
   }
 
+  // Return a reference to the found file
   return *(it->second);
 }
