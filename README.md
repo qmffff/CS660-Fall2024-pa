@@ -8,40 +8,33 @@
 We are grading your solutions on Linux, so we suggest that you implement the assignments on Linux.
 That being said you should be able to use any OS of your choice if you follow these instructions.
 
-## CLion Instructions
+# Step-by-step instructions to setup the project and run your first test
 
-We highly recommend using an IDE such as [CLion](https://www.jetbrains.com/clion/) as it comes with the tools you need
+1. If you use Windows, you need to install [WSL](https://learn.microsoft.com/en-us/windows/wsl/install). If you use Linux or MacOS please proceed to next step.
+    + Please install a new Ubuntu-based WSL
+1. Download an IDE (we suggest [CLion](#setting-up-the-clion-ide) or [VSCode](#setting-up-the-vscode-ide))
+1. Ensure you have the necessary compilers and libraries. Click [here for Linux or WSL](#setting-the-environment-in-linux-or-wsl) and [here for MacOS](#setting-the-environment-in-macos).
+1. Clone the repository. Click [here for details](#cloning-the-repository).
+1. Build the project. Click [here for details](#building-the-project).
+1. Compile the project by giving `make` from within the `build` directory.
+1. Run your first test by giving `ctest` from within the `build` directory.
+
+## Setting up the CLion IDE
+
+ We highly recommend using the [CLion](https://www.jetbrains.com/clion/) IDE as it comes with the tools you need
 to complete your assignment. You will need a **free** license for CLion, which you can get by following the
 instructions [here](https://www.jetbrains.com/shop/eform/students).
 
-### Windows
+## Setting up the VSCode IDE
 
-Windows are supported through [WSL](https://learn.microsoft.com/en-us/windows/wsl/install).
-
-### Linux
-
-No need for any steps further.
-
-### MacOS
-
-No need for any steps further.
-
-## VS Code Instructions
-
-As an alternative, you can use a source code editor such as [VS Code](https://code.visualstudio.com/). This tool needs a
-few more steps to configure it properly.
-
-Install the following extensions:
+[VS Code](https://code.visualstudio.com/) needs to install the following two extensions to be configured properly.
 
 - [C/C++ for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 - [CMake Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools)
 
-### Windows
+## Setting up the environment
 
-Windows are supported through [WSL](https://learn.microsoft.com/en-us/windows/wsl/install).
-After installing WSL you can follow the [Linux](#linux-1) instructions.
-
-### Linux
+### Setting the environment in Linux or WSL
 
 Run the following commands:
 
@@ -51,7 +44,7 @@ sudo apt upgrade -y
 sudo apt install -y gcc g++ build-essential gdb make cmake valgrind
 ```
 
-### MacOS
+### Setting the environment in MacOS
 
 Clang may already be installed on your Mac. To verify that it is, open a macOS Terminal window and enter the following
 command:
@@ -66,8 +59,8 @@ If Clang isn't installed, enter the following command to install the command lin
 xcode-select --install
 ```
 
-# Deploying the Code
-## Cloning the repository
+## Deploying the Code
+### Cloning the repository
 If you are using an IDE, you can clone the repository directly using the IDE. When prompted for the link to the remote repo, **use this repository's link from github**.
 - [Instructions for VS Code](https://code.visualstudio.com/docs/sourcecontrol/intro-to-git#:~:text=To%20clone%20a%20repository%2C%20run,to%20clone%20to%20your%20machine.)
 - [Instructions for CLion](https://www.jetbrains.com/help/clion/set-up-a-git-repository.html#clone-repo)
@@ -99,14 +92,12 @@ Use the following commands:
 mkdir build 
 cd build 
 cmake ..
-make
 ```
 The following assumes you are inside the project folder. We are essentially creating a build/ folder and then building the project using cmake. 
 From the next time you want to build the project, you don't need to create the build folder:
 ```sh 
 cd build
 cmake ..
-make
 ```
 
 #### Compile the code
